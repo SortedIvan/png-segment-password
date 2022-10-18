@@ -10,7 +10,12 @@ namespace logic
 {
     public class FileHandler
     {
-        
+        private GeometryHandler geo_handler;
+        public FileHandler()
+        {
+            geo_handler = new GeometryHandler();
+        }
+
         public Bitmap CropImage(Bitmap source, Rectangle section)
         {
             if (OperatingSystem.IsWindows())
@@ -27,40 +32,31 @@ namespace logic
 
         
 
-        public Bitmap TestImageSaving()
+        public List<Bitmap> TestImageSaving()
         {
             if (OperatingSystem.IsWindows())
             {
                 Bitmap source = new Bitmap(@"C:\png-segment-password\png-password\logic\images\test.jpg");
-                List<Point> points = new List<Point>();
-                int og_height = source.Height;
-                int og_width = source.Width;
-
-                int width_div = source.Width / 4;
-                int height_div = source.Height / 4;
-
-                // 0, 200 , 400, 600
-                int[] widths = new int[] { 0, og_width - width_div* 3, og_width - width_div * 2, og_width - width_div};
-
-                // 0, 200, 400, 600
-                int[] heights = new int[] { 0, og_height - height_div * 3, og_height - height_div * 2, og_height - height_div };
-
-           
-                for (int x = 0; x < heights.Length; x++)
+                List<Point> points = geo_handler.GetRectanglePointsFromImage(source);
+                List<Rectangle> sections = new List<Rectangle>();
+                Tuple<int, int> rectangle_size = geo_handler.GetSmallRectangleSize(source);
+                List<Bitmap> images = new List<Bitmap>();
+                for (int i = 0; i < points.Count; i++)
                 {
-                    for (int y = 0; y < widths.Length; y++) 
-                    {
-                        points.Add(new Point(heights[x], widths[y]));
-                        System.Diagnostics.Debug.WriteLine($"{heights[x]}, {widths[y]}");
-                    }
+                    sections.Add(new Rectangle(points[i], new Size(rectangle_size.Item1, rectangle_size.Item2)));
                 }
 
+                for (int i = 0; i < sections.Count; i++) 
+                {
+                    images.Add(CropImage(source, sections[i]));
+                }
 
                 //Rectangle section = new Rectangle(new Point(12, 50), new Size(150, 150));
                 //Bitmap CroppedImage = CropImage(source, section);
                 //System.Diagnostics.Debug.WriteLine("We be saving this shit.");
                 //CroppedImage.Save("test.jpg", ImageFormat.Jpeg);
                 //return CroppedImage;
+                return images;
             }
             return null;
         }

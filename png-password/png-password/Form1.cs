@@ -24,13 +24,11 @@ namespace png_password
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-            
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Bitmap bm = fileHandler.TestImageSaving();
+            Bitmap bm = fileHandler.TestImageSaving()[15];
             e.Graphics.DrawImage(bm, 60, 60);
             base.OnPaint(e);
         }
