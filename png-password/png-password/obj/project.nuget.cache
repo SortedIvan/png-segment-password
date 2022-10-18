@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "c9mnCtUYisIw6PdThz5+oqkf30Htc6N6/xR0vmLcsPnBmg1pZLHX0u4MZTHcPhNF5T+eTzTXJLun0qC85DwT7w==",
+  "dgSpecHash": "S3OOWS/lKlxju+9OJdCVQFWAo0yPhL4S0hW9uz1f8TSPOu0WWPlA86TJCWBZROXPsQPKSTCX7W2grzeHiAiqIQ==",
   "success": true,
   "projectFilePath": "C:\\png-segment-password\\png-password\\png-password\\png-password.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ivano\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\ivano\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

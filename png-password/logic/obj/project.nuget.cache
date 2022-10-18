@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "E38BRyTuATIMiwMOo5s5vXc00etgul2dUBjXn3n2uasVw/ojaI+lstzqMMey4tAEFrfnBBeIXtbarnp/oZtrmg==",
+  "dgSpecHash": "jB6p2QCQEFWXzDBeXsCkoFI+2Vv1NwwGRcAcchdlBCXKdCuoOTeBlQqsCPK2j/diBHD4taEBpg2JRIJUKepuQQ==",
   "success": true,
   "projectFilePath": "C:\\png-segment-password\\png-password\\logic\\logic.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ivano\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\ivano\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
