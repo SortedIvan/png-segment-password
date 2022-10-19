@@ -32,11 +32,11 @@ namespace logic
 
         
 
-        public List<Bitmap> TestImageSaving()
+        public List<Bitmap> segment_password_image(string path)
         {
             if (OperatingSystem.IsWindows())
             {
-                Bitmap source = new Bitmap(@"C:\png-segment-password\png-password\logic\images\test.jpg");
+                Bitmap source = new Bitmap(path);
                 List<Point> points = geo_handler.GetRectanglePointsFromImage(source);
                 List<Rectangle> sections = new List<Rectangle>();
                 Tuple<int, int> rectangle_size = geo_handler.GetSmallRectangleSize(source);
@@ -51,11 +51,6 @@ namespace logic
                     images.Add(CropImage(source, sections[i]));
                 }
 
-                //Rectangle section = new Rectangle(new Point(12, 50), new Size(150, 150));
-                //Bitmap CroppedImage = CropImage(source, section);
-                //System.Diagnostics.Debug.WriteLine("We be saving this shit.");
-                //CroppedImage.Save("test.jpg", ImageFormat.Jpeg);
-                //return CroppedImage;
                 return images;
             }
             return null;
