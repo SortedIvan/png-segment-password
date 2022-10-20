@@ -8,7 +8,10 @@ namespace logic
 {
     public class LoginHandler
     {
-
+        private FileHandler file_handler;
+        public LoginHandler()
+        {
+        }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using logic;
+﻿using algorithm;
+using logic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -17,22 +18,22 @@ namespace png_password
         {
             InitializeComponent();
             this.geo_handler = new GeometryHandler();
-            fileHandler = new FileHandler(geo_handler, segment_generator);
             this.segment_generator = new RandomSegmentGenerator();
+            fileHandler = new FileHandler(geo_handler, segment_generator);
+            
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Bitmap> images16 = fileHandler.segment_password_image(key_image_path);
+            List<ImageSegment> images16 = fileHandler.GetOneCycleOfImages(key_image_path);
             List<PictureBox> picture_boxes = GetPictureBoxes(this);
-
-            //for (int i = 0; i < picture_boxes.Count; i++) 
-            //{
-            //    picture_boxes[i].Image = images16[i]; 
-            //    System.Diagnostics.Debug.WriteLine($"{picture_boxes[i].Name}");
-            //}
-            picture_boxes[0].Image = fileHandler.segment_random_image(segment_generator.GenerateRandomSegment())[8];
+            System.Diagnostics.Debug.WriteLine(images16.Count + "is the count");
+            Random random = new Random();
+            for (int i = 0; i < images16.Count; i++)
+            {
+                picture_boxes[i].Image = images16[i].GetImage();
+            }
         }
 
         public List<PictureBox> GetPictureBoxes(Control control)

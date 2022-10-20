@@ -1484,6 +1484,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
+      },
+      "algorithm/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/algorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/algorithm.dll": {}
+        }
       }
     }
   },
@@ -5385,12 +5398,18 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "algorithm/1.0.0": {
+      "type": "project",
+      "path": "../algorithm/algorithm.csproj",
+      "msbuildProject": "../algorithm/algorithm.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
-      "System.Drawing.Common >= 6.0.0"
+      "System.Drawing.Common >= 6.0.0",
+      "algorithm >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5427,7 +5446,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\png-segment-password\\png-password\\algorithm\\algorithm.csproj": {
+              "projectPath": "C:\\png-segment-password\\png-password\\algorithm\\algorithm.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

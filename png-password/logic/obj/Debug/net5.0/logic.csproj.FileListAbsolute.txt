@@ -10,3 +10,6 @@ C:\png-segment-password\png-password\logic\obj\Debug\net5.0\logic.csproj.CoreCom
 C:\png-segment-password\png-password\logic\obj\Debug\net5.0\logic.dll
 C:\png-segment-password\png-password\logic\obj\Debug\net5.0\ref\logic.dll
 C:\png-segment-password\png-password\logic\obj\Debug\net5.0\logic.pdb
+C:\png-segment-password\png-password\logic\bin\Debug\net5.0\algorithm.dll
+C:\png-segment-password\png-password\logic\bin\Debug\net5.0\algorithm.pdb
+C:\png-segment-password\png-password\logic\obj\Debug\net5.0\logic.csproj.CopyComplete

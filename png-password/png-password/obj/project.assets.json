@@ -1485,12 +1485,26 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
+      "algorithm/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/algorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/algorithm.dll": {}
+        }
+      },
       "logic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.9",
-          "System.Drawing.Common": "6.0.0"
+          "System.Drawing.Common": "6.0.0",
+          "algorithm": "1.0.0"
         },
         "compile": {
           "bin/placeholder/logic.dll": {}
@@ -5399,6 +5413,11 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "algorithm/1.0.0": {
+      "type": "project",
+      "path": "../algorithm/algorithm.csproj",
+      "msbuildProject": "../algorithm/algorithm.csproj"
     },
     "logic/1.0.0": {
       "type": "project",

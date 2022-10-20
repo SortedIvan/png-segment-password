@@ -1,0 +1,5 @@
+C:\png-segment-password\png-password\factories\obj\Debug\net5.0\factories.csproj.AssemblyReference.cache
+C:\png-segment-password\png-password\factories\obj\Debug\net5.0\factories.GeneratedMSBuildEditorConfig.editorconfig
+C:\png-segment-password\png-password\factories\obj\Debug\net5.0\factories.AssemblyInfoInputs.cache
+C:\png-segment-password\png-password\factories\obj\Debug\net5.0\factories.AssemblyInfo.cs
+C:\png-segment-password\png-password\factories\obj\Debug\net5.0\factories.csproj.CoreCompileInputs.cache

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using algorithm;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -12,10 +13,12 @@ namespace logic
     {
         private GeometryHandler geo_handler;
         private RandomSegmentGenerator segmentGenerator;
+        private ImageAlgorithm image_randomizer;
         public FileHandler(GeometryHandler geo_handler, RandomSegmentGenerator segmentGenerator)
         {
             this.geo_handler = geo_handler;
             this.segmentGenerator = segmentGenerator;
+            this.image_randomizer = new ImageAlgorithm();
         }
 
         public Bitmap CropImage(Bitmap source, Rectangle section)
@@ -53,7 +56,17 @@ namespace logic
                 return images;
             }
             return null;
+        }
 
+        public List<List<Bitmap>> SegmentRandomImages()
+        {
+            List<List<Bitmap>> bitmaps = new List<List<Bitmap>>();
+            List<Bitmap> unsegmented_images = segmentGenerator.GenerateRandomSegments();
+            for (int i = 0; i < unsegmented_images.Count; i++)
+            {
+                bitmaps.Add(segment_random_image(unsegmented_images[i]));
+            }
+            return bitmaps;
         }
 
         public List<Bitmap> segment_password_image(string path)
@@ -78,6 +91,13 @@ namespace logic
                 return images;
             }
             return null;
+        }
+
+        public List<ImageSegment> GetOneCycleOfImages(string image_password_path)
+        {
+            List<ImageSegment> final_images = image_randomizer.GenerateImageSegments(
+                SegmentRandomImages(), segment_password_image(image_password_path));
+            return final_images;
         }
     }
 }

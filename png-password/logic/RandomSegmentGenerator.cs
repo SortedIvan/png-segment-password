@@ -17,16 +17,24 @@ namespace logic
             clientFactory = new ClientFactory();
         }
 
-        public Bitmap GenerateRandomSegment()
+        public List<Bitmap> GenerateRandomSegments()
         {
-            List<Bitmap> random_images = new List<Bitmap>();
-            for (int i = 0; i < 16; i++) 
+            if (OperatingSystem.IsWindows())
             {
-                random_images.Add(GenerateRandomImage());
+                List<Bitmap> random_images = new List<Bitmap>();
+                string[] files = Directory.GetFiles(@"C:\png-segment-password\png-password\logic\images\");
+
+                for (int i = 0; i < files.Length; i++)
+                {
+                    System.Diagnostics.Debug.WriteLine(files[i]);
+                    if (!files[i].Contains("test"))
+                    {
+                        random_images.Add(new Bitmap(files[i]));
+                    }
+                }
+                return random_images;
             }
-
-            return random_images[GenerateRandomNum(random_images)];
-
+            return null;
         }
 
         private int GenerateRandomNum(List<Bitmap> bitmaps)
@@ -47,6 +55,7 @@ namespace logic
             }
             return null;
         }
+
 
         //result.results[0].name.first
         //Root firstName = Task.Run(async () => await apiConnector.GetRandomName(true, "male")).Result;

@@ -1,0 +1,12 @@
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.GeneratedMSBuildEditorConfig.editorconfig
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.AssemblyInfoInputs.cache
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.AssemblyInfo.cs
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.csproj.CoreCompileInputs.cache
+C:\png-segment-password\png-password\algorithm\bin\Debug\net5.0\algorithm.deps.json
+C:\png-segment-password\png-password\algorithm\bin\Debug\net5.0\algorithm.dll
+C:\png-segment-password\png-password\algorithm\bin\Debug\net5.0\ref\algorithm.dll
+C:\png-segment-password\png-password\algorithm\bin\Debug\net5.0\algorithm.pdb
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.dll
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\ref\algorithm.dll
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.pdb
+C:\png-segment-password\png-password\algorithm\obj\Debug\net5.0\algorithm.csproj.AssemblyReference.cache
