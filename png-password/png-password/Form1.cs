@@ -10,12 +10,14 @@ namespace png_password
     public partial class Form1 : Form
     {
         private FileHandler fileHandler;
+        private GeometryHandler geo_handler;
         private RandomSegmentGenerator segment_generator;
         private string key_image_path = @"C:\png-segment-password\png-password\logic\images\test.jpg";
         public Form1()
         {
             InitializeComponent();
-            fileHandler = new FileHandler();
+            this.geo_handler = new GeometryHandler();
+            fileHandler = new FileHandler(geo_handler, segment_generator);
             this.segment_generator = new RandomSegmentGenerator();
 
         }
@@ -30,7 +32,7 @@ namespace png_password
             //    picture_boxes[i].Image = images16[i]; 
             //    System.Diagnostics.Debug.WriteLine($"{picture_boxes[i].Name}");
             //}
-            picture_boxes[0].Image = segment_generator.GenerateRandomSegment();
+            picture_boxes[0].Image = fileHandler.segment_random_image(segment_generator.GenerateRandomSegment())[8];
         }
 
         public List<PictureBox> GetPictureBoxes(Control control)

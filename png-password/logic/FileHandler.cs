@@ -11,9 +11,11 @@ namespace logic
     public class FileHandler
     {
         private GeometryHandler geo_handler;
-        public FileHandler()
+        private RandomSegmentGenerator segmentGenerator;
+        public FileHandler(GeometryHandler geo_handler, RandomSegmentGenerator segmentGenerator)
         {
-            geo_handler = new GeometryHandler();
+            this.geo_handler = geo_handler;
+            this.segmentGenerator = segmentGenerator;
         }
 
         public Bitmap CropImage(Bitmap source, Rectangle section)
@@ -30,7 +32,29 @@ namespace logic
             return null;
         }
 
-        
+        public List<Bitmap> segment_random_image(Bitmap source) 
+        {
+            if (OperatingSystem.IsWindows())
+            {
+                List<Point> points = geo_handler.GetRectanglePointsFromImage(source);
+                List<Rectangle> sections = new List<Rectangle>();
+                Tuple<int, int> rectangle_size = geo_handler.GetSmallRectangleSize(source);
+                List<Bitmap> images = new List<Bitmap>();
+                for (int i = 0; i < points.Count; i++)
+                {
+                    sections.Add(new Rectangle(points[i], new Size(rectangle_size.Item1, rectangle_size.Item2)));
+                }
+
+                for (int i = 0; i < sections.Count; i++)
+                {
+                    images.Add(CropImage(source, sections[i]));
+                }
+
+                return images;
+            }
+            return null;
+
+        }
 
         public List<Bitmap> segment_password_image(string path)
         {
