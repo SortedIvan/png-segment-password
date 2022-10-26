@@ -12,6 +12,7 @@ namespace algorithm
         private Guid id;
         private Bitmap segment;
         private bool is_password;
+        private string pb_name;
 
         public ImageSegment(Bitmap segment, bool is_password)
         {
@@ -28,6 +29,15 @@ namespace algorithm
         public bool CheckIsPassword()
         {
             return this.is_password;
+        }
+
+        public string GetImagePosition()
+        {
+            return pb_name;
+        }
+        public void SetImagePosition(string position)
+        {
+            this.pb_name = position;
         }
     }
 }

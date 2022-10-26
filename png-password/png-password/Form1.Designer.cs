@@ -46,6 +46,7 @@ namespace png_password
             this.pb14 = new System.Windows.Forms.PictureBox();
             this.pb13 = new System.Windows.Forms.PictureBox();
             this.pb12 = new System.Windows.Forms.PictureBox();
+            this.pb_log = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
@@ -62,6 +63,7 @@ namespace png_password
             ((System.ComponentModel.ISupportInitialize)(this.pb14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_log)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -177,7 +179,6 @@ namespace png_password
             this.pb15.Size = new System.Drawing.Size(92, 87);
             this.pb15.TabIndex = 18;
             this.pb15.TabStop = false;
-            this.pb15.Click += new System.EventHandler(this.pb15_Click);
             // 
             // pb14
             // 
@@ -203,11 +204,20 @@ namespace png_password
             this.pb12.TabIndex = 15;
             this.pb12.TabStop = false;
             // 
+            // pb_log
+            // 
+            this.pb_log.Location = new System.Drawing.Point(12, 45);
+            this.pb_log.Name = "pb_log";
+            this.pb_log.Size = new System.Drawing.Size(611, 410);
+            this.pb_log.TabIndex = 19;
+            this.pb_log.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 549);
+            this.Controls.Add(this.pb_log);
             this.Controls.Add(this.pb15);
             this.Controls.Add(this.pb14);
             this.Controls.Add(this.pb13);
@@ -227,6 +237,7 @@ namespace png_password
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
@@ -243,6 +254,7 @@ namespace png_password
             ((System.ComponentModel.ISupportInitialize)(this.pb14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_log)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,6 +278,7 @@ namespace png_password
         private System.Windows.Forms.PictureBox pb14;
         private System.Windows.Forms.PictureBox pb13;
         private System.Windows.Forms.PictureBox pb12;
+        private System.Windows.Forms.PictureBox pb_log;
     }
 }
 

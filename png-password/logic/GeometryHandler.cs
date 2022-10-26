@@ -49,7 +49,6 @@ namespace logic
                     for (int y = 0; y < widths.Length; y++)
                     {
                         points.Add(new Point(heights[x], widths[y]));
-                        System.Diagnostics.Debug.WriteLine($"{heights[x]}, {widths[y]}");
                     }
                 }
             }

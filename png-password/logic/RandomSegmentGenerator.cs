@@ -27,10 +27,8 @@ namespace logic
                 for (int i = 0; i < files.Length; i++)
                 {
                     System.Diagnostics.Debug.WriteLine(files[i]);
-                    if (!files[i].Contains("test"))
-                    {
-                        random_images.Add(new Bitmap(files[i]));
-                    }
+                    random_images.Add(new Bitmap(files[i]));
+                   
                 }
                 return random_images;
             }
